@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from './views/Index.vue'
-import Login from './views/Login'
-import noFind from './views/404'
+import Login from '@/views/Login'
+import noFind from '@/views/404'
+import Layout from '@/layout/Index'
 
 Vue.use(Router)
 const router = new Router({
@@ -10,11 +10,10 @@ const router = new Router({
   routes: [
     { path: '*', name: '/404', component: noFind },
     { path: '/login', name: 'login', component: Login },
-    { path: '/', redirect: '/index' },
+    { path: '/leftmenu', name: 'leftmenu', component: () => import('@/layout/components/LeftMenu') },
     {
-      path: '/index',
-      name: 'index',
-      component: Index
+      path: '/',
+      component: Layout
     }
   ]
 })

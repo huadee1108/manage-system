@@ -57,7 +57,7 @@ export default {
                   center: true,
                   type: 'success'
                 })
-                this.$router.push('/index')
+                // this.$router.push('/index')
               } else {
                 console.log('error submit!!')
                 return false
